@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--<script src="jquery-1.11.3.js"></script>-->
+		<title></title>
+	</head>
+	<script>
+//
+//var a = /\d+/g;
+//var b = /\d+/g;
+//console.log(a == b);
+//  s数组排序
+        function quickSort(arr){
+        	if(arr.length<=1){
+        	return arr;//如果数组里只有一个数，就直接返回        		
+        	};
+        	var num = Math.floor(arr.length/2);//找到中间的索引值，如果是浮点数就转换成整数
+        	var numValue = arr.splice(num,1);//找到中间值
+        	var left = [];
+        	var right = [];
+        	for(var i = 0;i<arr.length;i++){
+        		if(arr[i]<numValue){
+        			left.push(arr[i]);  //基准点的左边的数传到左边数组
+        		}else{
+        			right.push(arr[i]);//基准点的右边的数传到右边数字组
+        		}
+        	}
+        	return quickSort(left).concat([numValue],quickSort(right));//递归不重复比较
+        }
+        alert(quickSort([23,34,22,10,44,32]));
+        
+        
+        
+
+     
+     var arr = [1,2,3,3,4,4,4,5,6,7,8];
+     var newarr = [];
+     for(var i=0;i<arr.length;i++){
+     	if(newarr.indexOf(arr[i])==-1)newarr.push(arr[i]);
+     }
+     alert(newarr);
+	</script>
+
+
+	<body >
+    
+	</body>
+
+</html>
